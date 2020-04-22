@@ -11,6 +11,7 @@ const forecast = (latitude, longitude, callback) => {
         }else if(body.error){
             console.log('Unable to find locatation', error)
         }else{
+            console.log('weather_desc ',body.current.weather_descriptions[0])
             callback(undefined, body.current.weather_descriptions[0] +'until evening and breezy through out the day. it is currently '+body.current.temperature+' degree out there is '+body.current.feelslike+' % chance of rain')
         }
         console.log(url)
